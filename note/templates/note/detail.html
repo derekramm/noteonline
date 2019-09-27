@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block styles %}
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+
+{% block main %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3>
+                {{ article.title }}
+                <small>{{ article.author }}</small>
+            </h3>
+        </div>
+        <div class="panel-body">
+            <div class="jumbotron">
+                <p class="lead">摘要：SUMMARY</p>
+                <div class="text text-info">{{ article.summary }}</div>
+            </div>
+
+            <p>
+                {{ article.content }}
+            </p>
+            <div>
+                <div>
+                    {% for tag in article.tags %}
+                        <span>{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                <div>
+                    {% for topic in article.topics %}
+                        <span>{{ topic }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer text-right">
+            {{ article.updated_at }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

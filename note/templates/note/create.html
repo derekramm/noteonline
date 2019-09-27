@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block styles %}
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+
+{% block main %}
+    <form action="" method="post" class="form-horizontal">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="title" class="control-label col-sm-2">标题</label>
+            <div class="col-sm-8">
+                <input type="text" id="title" name="title" class="form-control">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="content" class="control-label col-sm-2">正文</label>
+            <div class="col-sm-8">
+                <textarea rows="10" id="content" name="content" class="form-control"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-8 col-sm-offset-2 text-right">
+                <button type="submit" class="btn btn-default">提交</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
